@@ -49,7 +49,7 @@ handleIngredientsChange(e) {
           
         </div>
         <div className="burgerpanel">
-          <BurgerPane/>
+          <BurgerPane toppings={this.state.selectedIngredients}/>
         </div>
       </main>
     );

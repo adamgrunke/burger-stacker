@@ -7,9 +7,7 @@ class BurgerPane extends React.Component {
         return(
             <main>
                 <div>
-                    <div>Selected Ingredient</div>
-                    <div>Selected Ingredient</div>
-                    <div>Selected Ingredient</div>
+                {this.props.toppings.map((ingredient, i) => <div key={i}>{ingredient}</div> )}
                 </div>
                 <div id="burgerbase"></div>
                 <p>Burger Stack Area</p>
