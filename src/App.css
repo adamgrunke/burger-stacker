@@ -1,3 +1,17 @@
+.burgerpanel {
+  border: 1px solid black;
+  margin: 10%;
+  width: 50%;
+  text-align: center;
+  margin: 10px auto;
+
+}
+
+.burgerpanel p {
+  padding: 5px;
+
+}
+
 .App {
   text-align: center;
 }
