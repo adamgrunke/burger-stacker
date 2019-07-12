@@ -12,6 +12,14 @@
 
 }
 
+#burgerbase {
+  width: 200px;
+  height: 15px;
+  text-align: center;
+  margin: auto;
+  background-color: gray;
+}
+
 .App {
   text-align: center;
 }

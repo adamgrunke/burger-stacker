@@ -5,7 +5,17 @@ class IngredientList extends React.Component {
     
     render() {
         return(
-            <p>Ingredient</p>
+            <>
+
+
+                {this.props.toppings.map((ingredient, i) => <div key={i}>{ingredient.name}
+                
+                <button value={ingredient.name} onClick={this.props.onClick}>></button>
+
+                </div> )}
+                
+                
+            </>
         );
     }
 }
