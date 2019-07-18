@@ -28,9 +28,14 @@ class App extends React.Component {
   }
 
 handleIngredientsChange(e) {
-  e.preventDefault();
+  console.log(e.target.value[0]);
   const stack = e.target.value;
   var food = this.state.selectedIngredients;
+
+  // var food = {
+  //   name: this.state.selectedIngredients.name,
+  //   color: this.state.selectedIngredients.color
+  // }
   food.push(stack);
 
   this.setState({
