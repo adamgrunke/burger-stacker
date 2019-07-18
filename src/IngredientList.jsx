@@ -1,32 +1,24 @@
 import React from 'react';
 
-class IngredientList extends React.Component {
-    
-    
-    render() {
+const IngredientList = props => {
+    var showIngredients = props.toppings.map((ingredient, i) => {
         return(
-            <>
+            <div key={i}>
+                {ingredient.name}
+                <button 
+                    value={[ingredient.name, ingredient.color]} 
+                    onClick={props.onClick}>>
+                </button>
+            </div>
+        )
+    }) 
 
-
-                {this.props.toppings.map((ingredient, i) => <div key={i}>{ingredient.name}
-                
-                <button value={ingredient.name} onClick={this.props.onClick}>></button>
-
-                </div> )}
-                
-                
-            </>
-        );
-    }
+    return(
+            <div>
+                <div>
+                    {showIngredients}
+                </div> 
+            </div>
+    )
 }
-
-
-
-
-
-
-
-
-
-
 export default IngredientList;

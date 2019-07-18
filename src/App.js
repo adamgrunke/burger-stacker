@@ -3,7 +3,6 @@ import './App.css';
 import IngredientList from './IngredientList';
 import BurgerPane from './BurgerPane';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,41 +24,42 @@ class App extends React.Component {
       selectedIngredients : []
     }
     this.handleIngredientsChange = this.handleIngredientsChange.bind(this);
+    this.handleClearBurger = this.handleClearBurger.bind(this);
   }
-  
+
 handleIngredientsChange(e) {
   e.preventDefault();
   const stack = e.target.value;
-  var selectedIngredients = this.state.selectedIngredients;
-  selectedIngredients.push(stack);
-  console.log(selectedIngredients)
-  
+  var food = this.state.selectedIngredients;
+  food.push(stack);
+
   this.setState({
-  selectedIngredients
+  selectedIngredients: food
   })
 }
+
+handleClearBurger(e) {
+  var clearedArr = [];
+
+  this.setState({
+    selectedIngredients: clearedArr
+  })
+}
+
     // need to render the selected items. 
   render() {
-    
     return(
       <main>
         <h1>Build your burger!</h1>
         <div className="burgerpanel">
           <IngredientList toppings={this.state.toppingsList} onClick={this.handleIngredientsChange}/>
-          
         </div>
         <div className="burgerpanel">
-          <BurgerPane toppings={this.state.selectedIngredients}/>
+          <BurgerPane burgerToppings={this.state.selectedIngredients} onClick={this.handleClearBurger}/>
         </div>
       </main>
     );
   }
 }
-
-
-
-
-
-
 
 export default App;

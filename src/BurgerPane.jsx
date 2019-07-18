@@ -1,30 +1,23 @@
 import React from 'react';
 
-class BurgerPane extends React.Component {
-    
-    
-    render() {
+const BurgerPane = props => {
+    console.log(props.burgerToppings)
+    var showBurger = props.burgerToppings.map((ingredient, i) => {
         return(
+            <div key={i}>
+                <p>{ingredient}</p>
+            </div> 
+        )
+    })
+
+    return(
             <main>
-                <div>
-                {this.props.toppings.map((ingredient, i) => <div key={i}>{ingredient}</div> )}
-                </div>
+                {showBurger}
                 <div id="burgerbase"></div>
                 <p>Burger Stack Area</p>
-                <button>Clear</button>
+                <button onClick={props.onClick} >Clear</button>
             </main>
-
-        );
-    }
+    )
 }
-
-
-
-
-
-
-
-
-
-
 export default BurgerPane;
+
